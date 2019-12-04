@@ -1,0 +1,180 @@
+html {
+  font-family: "Fredoka One", sans-serif;
+  color: #c09;
+  background-image: repeating-linear-gradient(-30deg, #c9fcff, #c9fcff .75%, #d4fdff .75%, #d4fdff 1.5%);
+  border-bottom: 10px solid #b3fbff;
+}
+
+section {
+  max-height: 520px;
+}
+
+img {
+  width: 180px;
+}
+
+.btn-ghost {
+  color: #c09;
+  border-color: #990073;
+}
+
+.btn-ghost:hover {
+  background-color: #c09;
+}
+
+.max-width {
+  max-width: 19em;
+}
+
+.cherry {
+  z-index: 10;
+  top: -15em;
+  left: 3.5em;
+  animation: fly-in-cherry .25s linear forwards;
+}
+
+.v-fudge {
+  z-index: 9;
+  top: -20.3em;
+  left: 3.33em;
+  animation: fly-in-v-fudge .25s .15s linear forwards;
+}
+
+.ch-chip {
+  z-index: 8;
+  top: -30.75em;
+  left: 3.75em;
+  animation: fly-in-ch-chip .25s .25s linear forwards;
+}
+
+.mt-chip {
+  top: -42em;
+  left: 3.5em;
+  animation: fly-in-mt-chip .25s .375s linear forwards;
+}
+
+.cone {
+  z-index: 7;
+  top: -50em;
+  left: 3.5em;
+  animation: fly-in-cone .25s .4s linear forwards;
+}
+
+.wrapper35 {
+  max-width: 56.5em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h1, p {
+  transform-origin: left center;
+}
+
+h1, p, a {
+  filter: opacity(0);
+  text-shadow: 2px 3px rgba(0, 0, 0, .1);
+  animation: show .25s .5s linear forwards;
+}
+
+h1 {
+  transform: rotate(-10deg);
+  top: 1.6em;
+  left: .75em;
+  color: #990073;
+}
+
+p {
+  transform: rotate(-5deg);
+  top: 2.5em;
+  left: 2em;
+}
+
+a {
+  top: 3em;
+  left: 5em;
+}
+
+@media only screen and (min-width: 90em) {
+
+  h1 {
+    top: 1.4em;
+    left: 1.27em;
+  }
+
+}
+
+@keyframes fly-in-cherry {
+
+  from {
+    top: -15em;
+  }
+
+  to {
+    top: -1.75em;
+  }
+
+}
+
+@keyframes fly-in-v-fudge {
+
+  from {
+    top: -30.3em;
+  }
+
+  to {
+    top: -7.05em;
+  }
+
+}
+
+@keyframes fly-in-ch-chip {
+
+  from {
+    top: -25.75em;
+  }
+
+  to {
+    top: -12.5em;
+  }
+
+}
+
+@keyframes fly-in-mt-chip {
+
+  from {
+    top: -42em;
+  }
+
+  to {
+    top: -17.5em;
+  }
+
+}
+
+@keyframes fly-in-cone {
+
+  from {
+    top: -50em;
+  }
+
+  to {
+    top: -21.5em;
+  }
+
+}
+
+@keyframes show {
+
+  0% {
+    filter: opacity(0) blur(5px);
+  }
+
+  50% {
+    filter: blur(10px);
+  }
+
+  100% {
+    filter: opacity(100) blur(0);
+  }
+
+}
