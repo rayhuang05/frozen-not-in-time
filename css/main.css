@@ -3,207 +3,188 @@ html {
 }
 
 .banner {
-  background: repeating-linear-gradient(-35deg, #d4fdff, #d4fdff 10px, #c9fcff 10px, #c9fcff 20px);
-  padding-bottom: 4.5em;
-  overflow: hidden;
-}
-
-body {
-  color: #c09;
-  border-top: .5em #b3fbff solid;
-  border-bottom: .5em #b3fbff solid;
+  background-image: repeating-linear-gradient(145deg, #d4fdff 12px, #d4fdff 24px, #c9fcff 24px, #c9fcff 36px);
+  border-top: 7px solid #b3fbff;
+  border-bottom: 7px solid #b3fbff;
 }
 
 h1 {
+  position: relative;
+  left: -.15em;
   color: #990073;
-  text-shadow: 2px 2px 1px rgba(0, 0, 0, .2);
   transform: rotate(-10deg);
+  transform-origin: left center;
+  filter: blur(12px);
+  text-shadow: 2px 2px rgba(150, 150, 150, .3);
+  opacity: 0;
+  animation: h1 .2s 1.2s ease-in forwards;
 }
 
-p {
-  text-shadow: 2px 2px 1px rgba(0, 0, 0, .2);
-  margin-left: .25em;
-  transform: rotate(-6deg);
+.intro-p {
+  color: #c09;
   max-width: 19em;
-}
-
-a {
-  text-shadow: 2px 2px 1px rgba(0, 0, 0, .2);
+  transform: rotate(-5deg);
+  transform-origin: left center;
+  text-shadow: 2px 2px rgba(150, 150, 150, .3);
+  animation: intro-p .2s 1.2s ease-in forwards;
+  opacity: 0;
+  filter: blur(12px);
 }
 
 .btn-ghost {
   color: #c09;
   border-color: #990073;
-  margin-left: .25em;
+  text-shadow: 2px 2px rgba(150, 150, 150, .3);
+  animation: btn-ghost .2s 1.2s ease-in forwards;
+  opacity: 0;
+  filter: blur(12px);
 }
 
 .btn-ghost:hover {
   color: #c09;
   border-color: #990073;
+  background-color: rgba(204, 0, 153, .1);
 }
 
-.text-wrapper {
-  opacity: 0;
-  animation-delay: 1000ms;
+@keyframes h1 {
+
+  0% {
+    filter: blur(12px);
+    opacity: 0;
+    transform: rotate(-10deg);
+  }
+
+  100% {
+    filter: blur(0);
+    opacity: 1;
+    transform: rotate(-8deg);
+  }
+
 }
 
-.icecream-wrapper {
-  position: relative;
+@keyframes intro-p {
+
+  0% {
+    filter: blur(12px);
+    opacity: 0;
+    transform: rotate(-10deg);
+  }
+
+  100% {
+    filter: blur(0);
+    opacity: 1;
+    transform: rotate(-8deg);
+  }
+
 }
 
-.cherry {
-  top: -1200px;
-  width: 160px;
-  z-index: 10;
-  left: calc(50% + 510px);
-  position: absolute;
-  animation: cherry 700ms linear forwards;
-  animation-delay: 1000ms;
+@keyframes btn-ghost {
+
+  0% {
+    filter: blur(12px);
+    opacity: 0;
+  }
+
+  100% {
+    filter: blur(0);
+    opacity: 1;
+  }
+
 }
 
-.vanilla-fudge {
-  top: -1200px;
-  width: 175px;
-  z-index: 9;
-  left: calc(50% + 500px);
-  position: absolute;
-  animation: vanilla-fudge 600ms linear forwards;
-  animation-delay: 400ms;
+.ice-cream {
+  min-height: 485px;
 }
 
-.chocolate-chip {
-  top: -1200px;
-  width: 175px;
-  z-index: 8;
-  left: calc(50% + 520px);
-  position: absolute;
-  animation: chocolate-chip 500ms linear forwards;
-  animation-delay: 300ms;
-}
-
-.mint-chip {
-  top: -1200px;
-  width: 175px;
-  z-index: 7;
-  left: calc(50% + 510px);
-  position: absolute;
-  animation: mint-chip 400ms linear forwards;
-  animation-delay: 200ms;
+.ingredient {
+  bottom: 100%;
+  left: 50%;
+  height: 180px;
+  width: 180px;
+  transform: translateX(-50%);
 }
 
 .cone {
-  top: -1200px;
-  width: 175px;
-  z-index: 11;
-  left: calc(50% + 510px);
-  position: absolute;
-  animation: cone 300ms linear forwards;
-  animation-delay: 150ms;
+  animation: cone .3s ease-in forwards;
 }
 
-@keyframes blur {
-
-  0% {
-    opacity: 0;
-    filter: blur(10px);
-  }
-
-  50% {
-    opacity: .5;
-    filter: blur(10px);
-  }
-
-  75% {
-    opacity: .5;
-    filter: blur(10px);
-  }
-
-  100% {
-    opacity: 1;
-    filter: blur(10px);
-  }
+.mint {
+  animation: mint .3s .3s ease-in forwards;
 }
 
-@keyframes cherry {
-
-  0% {
-    top: -1200px;
-  }
-
-  100% {
-    top: -410px;
-  }
-
+.chocolate {
+  animation: chocolate .3s .6s ease-in forwards;
+  left: 53%;
+  z-index: 2;
 }
 
-@keyframes vanilla-fudge {
-
-  0% {
-    top: -1200px;
-  }
-
-  100% {
-    top: -340px;
-  }
-
+.vanilla {
+  animation: vanilla .2s .9s ease-in forwards;
+  left: 48%;
+  z-index: 4;
 }
 
-@keyframes chocolate-chip {
-
-  0% {
-    top: -1200px;
-  }
-
-  100% {
-    top: -265px;
-  }
-
-}
-
-@keyframes mint-chip {
-
-  0% {
-    top: -1200px;
-  }
-
-  100% {
-    top: -180px;
-  }
-
+.cherry {
+  animation: cherry .15s 1.5s ease-in forwards;
+  z-index: 6;
 }
 
 @keyframes cone {
 
   0% {
-    top: -1200px;
+    bottom: 100%;
   }
 
   100% {
-    top: -80px;
+    bottom: 0;
   }
 
 }
 
-@media only screen and (min-width: 38em) {
+@keyframes mint {
 
-  .banner {
-    padding-top: 2em;
+  0% {
+    bottom: 100%;
+  }
+
+  100% {
+    bottom: 104px;
   }
 
 }
 
-@media only screen and (min-width: 90em) {
+@keyframes chocolate {
 
-  .banner {
-    padding-top: 0;
-    padding-left: 10em;
-    padding-right: 9em;
+  0% {
+    bottom: 100%;
   }
 
-  .icecream-wrapper {
-    left: calc(20% - 100px);
-    top: -20px;
-    padding-top: 0;
-    padding-bottom: 0;
+  100% {
+    bottom: 190px;
   }
+
+}
+
+@keyframes vanilla {
+
+  0% {
+    bottom: 100%;
+  }
+
+  100% {
+    bottom: 263px;
+  }
+
+}
+
+@keyframes cherry {
+
+  0% {
+    bottom: 100%;
+  }
+
+  100% {
+    bottom: 342px;
+  }
+
 }
