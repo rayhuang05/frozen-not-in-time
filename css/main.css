@@ -1,180 +1,209 @@
 html {
   font-family: "Fredoka One", sans-serif;
+}
+
+.banner {
+  background: repeating-linear-gradient(-35deg, #d4fdff, #d4fdff 10px, #c9fcff 10px, #c9fcff 20px);
+  padding-bottom: 4.5em;
+  overflow: hidden;
+}
+
+body {
   color: #c09;
-  background-image: repeating-linear-gradient(-30deg, #c9fcff, #c9fcff .75%, #d4fdff .75%, #d4fdff 1.5%);
-  border-bottom: 10px solid #b3fbff;
+  border-top: .5em #b3fbff solid;
+  border-bottom: .5em #b3fbff solid;
 }
 
-section {
-  max-height: 520px;
+h1 {
+  color: #990073;
+  text-shadow: 2px 2px 1px rgba(0, 0, 0, .2);
+  transform: rotate(-10deg);
 }
 
-img {
-  width: 180px;
+p {
+  text-shadow: 2px 2px 1px rgba(0, 0, 0, .2);
+  margin-left: .25em;
+  transform: rotate(-6deg);
+  max-width: 19em;
+}
+
+a {
+  text-shadow: 2px 2px 1px rgba(0, 0, 0, .2);
 }
 
 .btn-ghost {
   color: #c09;
   border-color: #990073;
+  margin-left: .25em;
 }
 
 .btn-ghost:hover {
-  background-color: #c09;
+  color: #c09;
+  border-color: #990073;
 }
 
-.max-width {
-  max-width: 19em;
+.text-wrapper {
+  opacity: 0;
+  animation-delay: 1000ms;
+}
+
+.icecream-wrapper {
+  position: relative;
 }
 
 .cherry {
+  top: -1200px;
+  width: 160px;
   z-index: 10;
-  top: -15em;
-  left: 3.5em;
-  animation: fly-in-cherry .25s linear forwards;
+  left: calc(50% + 510px);
+  position: absolute;
+  animation: cherry 700ms linear forwards;
+  animation-delay: 1000ms;
 }
 
-.v-fudge {
+.vanilla-fudge {
+  top: -1200px;
+  width: 175px;
   z-index: 9;
-  top: -20.3em;
-  left: 3.33em;
-  animation: fly-in-v-fudge .25s .15s linear forwards;
+  left: calc(50% + 500px);
+  position: absolute;
+  animation: vanilla-fudge 600ms linear forwards;
+  animation-delay: 400ms;
 }
 
-.ch-chip {
+.chocolate-chip {
+  top: -1200px;
+  width: 175px;
   z-index: 8;
-  top: -30.75em;
-  left: 3.75em;
-  animation: fly-in-ch-chip .25s .25s linear forwards;
+  left: calc(50% + 520px);
+  position: absolute;
+  animation: chocolate-chip 500ms linear forwards;
+  animation-delay: 300ms;
 }
 
-.mt-chip {
-  top: -42em;
-  left: 3.5em;
-  animation: fly-in-mt-chip .25s .375s linear forwards;
+.mint-chip {
+  top: -1200px;
+  width: 175px;
+  z-index: 7;
+  left: calc(50% + 510px);
+  position: absolute;
+  animation: mint-chip 400ms linear forwards;
+  animation-delay: 200ms;
 }
 
 .cone {
-  z-index: 7;
-  top: -50em;
-  left: 3.5em;
-  animation: fly-in-cone .25s .4s linear forwards;
+  top: -1200px;
+  width: 175px;
+  z-index: 11;
+  left: calc(50% + 510px);
+  position: absolute;
+  animation: cone 300ms linear forwards;
+  animation-delay: 150ms;
 }
 
-.wrapper35 {
-  max-width: 56.5em;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-h1, p {
-  transform-origin: left center;
-}
-
-h1, p, a {
-  filter: opacity(0);
-  text-shadow: 2px 3px rgba(0, 0, 0, .1);
-  animation: show .25s .5s linear forwards;
-}
-
-h1 {
-  transform: rotate(-10deg);
-  top: 1.6em;
-  left: .75em;
-  color: #990073;
-}
-
-p {
-  transform: rotate(-5deg);
-  top: 2.5em;
-  left: 2em;
-}
-
-a {
-  top: 3em;
-  left: 5em;
-}
-
-@media only screen and (min-width: 90em) {
-
-  h1 {
-    top: 1.4em;
-    left: 1.27em;
-  }
-
-}
-
-@keyframes fly-in-cherry {
-
-  from {
-    top: -15em;
-  }
-
-  to {
-    top: -1.75em;
-  }
-
-}
-
-@keyframes fly-in-v-fudge {
-
-  from {
-    top: -30.3em;
-  }
-
-  to {
-    top: -7.05em;
-  }
-
-}
-
-@keyframes fly-in-ch-chip {
-
-  from {
-    top: -25.75em;
-  }
-
-  to {
-    top: -12.5em;
-  }
-
-}
-
-@keyframes fly-in-mt-chip {
-
-  from {
-    top: -42em;
-  }
-
-  to {
-    top: -17.5em;
-  }
-
-}
-
-@keyframes fly-in-cone {
-
-  from {
-    top: -50em;
-  }
-
-  to {
-    top: -21.5em;
-  }
-
-}
-
-@keyframes show {
+@keyframes blur {
 
   0% {
-    filter: opacity(0) blur(5px);
+    opacity: 0;
+    filter: blur(10px);
   }
 
   50% {
+    opacity: .5;
+    filter: blur(10px);
+  }
+
+  75% {
+    opacity: .5;
     filter: blur(10px);
   }
 
   100% {
-    filter: opacity(100) blur(0);
+    opacity: 1;
+    filter: blur(10px);
+  }
+}
+
+@keyframes cherry {
+
+  0% {
+    top: -1200px;
   }
 
+  100% {
+    top: -410px;
+  }
+
+}
+
+@keyframes vanilla-fudge {
+
+  0% {
+    top: -1200px;
+  }
+
+  100% {
+    top: -340px;
+  }
+
+}
+
+@keyframes chocolate-chip {
+
+  0% {
+    top: -1200px;
+  }
+
+  100% {
+    top: -265px;
+  }
+
+}
+
+@keyframes mint-chip {
+
+  0% {
+    top: -1200px;
+  }
+
+  100% {
+    top: -180px;
+  }
+
+}
+
+@keyframes cone {
+
+  0% {
+    top: -1200px;
+  }
+
+  100% {
+    top: -80px;
+  }
+
+}
+
+@media only screen and (min-width: 38em) {
+
+  .banner {
+    padding-top: 2em;
+  }
+
+}
+
+@media only screen and (min-width: 90em) {
+
+  .banner {
+    padding-top: 0;
+    padding-left: 10em;
+    padding-right: 9em;
+  }
+
+  .icecream-wrapper {
+    left: calc(20% - 100px);
+    top: -20px;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
 }
